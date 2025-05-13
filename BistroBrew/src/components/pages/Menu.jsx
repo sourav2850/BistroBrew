@@ -22,7 +22,15 @@ const MenuPage = () => {
         <div className="menu-page">
             {/* Add the new image at the top */}
             <div className="menu-top-image">
-                <img src={menuTop} alt="Menu Top" className="menu-top-img" />
+                <img
+                    src={menuTop}
+                    alt="Menu Top"
+                    className="menu-top-img"
+                    loading="lazy" // Lazy load this image
+                    decoding="async" // Async decoding for better performance
+                    width="100%" // Make it responsive
+                    height="auto" // Make it responsive
+                />
             </div>
 
             <h2 className="menu-heading">Delight your taste buds—check out our irresistible menu!</h2>
@@ -43,10 +51,18 @@ const MenuPage = () => {
             </div>
 
             <div className="menu-display">
-                <img src={currentMenu} alt="Menu" className="menu-image" />
+                <img
+                    src={currentMenu}
+                    alt="Menu"
+                    className="menu-image"
+                    loading="lazy" // Lazy load the menu images
+                    decoding="async"
+                    width="100%" // Make it responsive
+                    height="auto"
+                />
             </div>
         </div>
     );
 };
 
-export default MenuPage;
+export default React.memo(MenuPage); // Wrap with React.memo to prevent unnecessary re-renders

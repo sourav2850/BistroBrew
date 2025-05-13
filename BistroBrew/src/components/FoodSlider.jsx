@@ -9,7 +9,6 @@ import cilantro from '../assets/static/CilantroPizza.jpg';
 import peri from '../assets/static/PeriPeri.jpg';
 import pinkPasta from '../assets/static/PinkPasta.jpg';
 
-
 const foodItems = [
     { id: 1, img: alfredo, name: "Alfredo Pasta" },
     { id: 2, img: cilantro, name: "Spicy Cilantro Pesto Pizza" },
@@ -17,24 +16,27 @@ const foodItems = [
     { id: 4, img: pinkPasta, name: "Pink Sauce Fusion Pasta" },
 ];
 
-
-
-
 const FoodSlider = () => {
     return (
         <div className="food-slider">
-            <h1> Popular items</h1>
+            <h1>Popular Items</h1>
             <Swiper
-                slidesPerView={4} // Show 4 images at a time
-                spaceBetween={20} // Spacing between images
-                navigation={true} // Enable left/right buttons
+                spaceBetween={20}
+                slidesPerView={1}
+                navigation={true}
                 modules={[Navigation]}
+                breakpoints={{
+                    640: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                    1280: { slidesPerView: 4 },
+                }}
                 className="mySwiper"
             >
                 {foodItems.map((item) => (
                     <SwiperSlide key={item.id}>
                         <div className="food-card">
-                            <img src={item.img} alt={`Food ${item.id}`} />
+                            <img src={item.img} alt={item.name} />
                             <div className="food-price">
                                 <span className="food-name">{item.name}</span>
                             </div>
@@ -47,3 +49,4 @@ const FoodSlider = () => {
 };
 
 export default FoodSlider;
+

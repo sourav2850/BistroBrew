@@ -31,15 +31,20 @@ const AboutUs = () => {
 
     return (
         <div className="about-us">
-            {/* Fixed Image at the Top */}
+            {/* Fixed Image at the Top with lazy loading */}
             <div className="fixed-image">
-                <img src={image} alt="Fixed Banner" />
+                <img src={image} alt="Fixed Banner" loading="lazy" />
             </div>
 
             {/* First Section: Image on Left, Text on Right */}
             <div className="section" ref={(el) => (sectionsRef.current[0] = el)}>
                 <div className="image-container left">
-                    <img src={cafe} alt="About Us 1" />
+                    <img
+                        src={cafe}
+                        alt="About Us 1"
+                        loading="lazy"  // Lazy load the image
+                        decoding="async" // Async decoding for better performance
+                    />
                 </div>
                 <div className="text-container">
                     <h2>About us</h2>
@@ -68,7 +73,12 @@ const AboutUs = () => {
                     </p>
                 </div>
                 <div className="image-container right">
-                    <img src={about1} alt="About Us 2" />
+                    <img
+                        src={about1}
+                        alt="About Us 2"
+                        loading="lazy"  // Lazy load the image
+                        decoding="async" // Async decoding for better performance
+                    />
                 </div>
             </div>
 
@@ -76,4 +86,4 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default React.memo(AboutUs); // Prevent unnecessary re-renders

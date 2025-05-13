@@ -583,7 +583,7 @@ body {
 }
 
 .food-slider {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   background-color: #A1C4C8;
@@ -594,6 +594,7 @@ body {
 .food-slider h1 {
   color: #1e4d40;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .food-card {
@@ -607,68 +608,57 @@ body {
 
 .food-card img {
   width: 100%;
-  height: 250px;
+  height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-/* Hover Effects */
 .food-card:hover {
-  transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+  transform: scale(1.03);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .food-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* Price Section */
 .food-price {
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: #1A6267;
-  /* Deep Teal */
   color: #F5E9D7;
   text-align: center;
-  padding: 10px;
+  padding: 10px 15px;
   font-size: 18px;
   font-weight: bold;
-  /* Flexbox for alignment */
   display: flex;
   justify-content: space-between;
-  /* Puts name on left & price on right */
   align-items: center;
-  padding: 10px 15px;
 }
 
-/* Optional: Style the name and price separately */
 .food-name {
   flex: 1;
-  /* Ensures proper spacing */
   text-align: left;
 }
 
 .food-cost {
   text-align: right;
-  font-weight: bold;
 }
 
-/* Hover Effect */
 .food-price:hover {
   color: #E1B84D;
 }
 
+/* Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #004d40 !important;
+}
+
 @media (max-width: 768px) {
-  .food-slider {
-    padding: 15px;
-  }
-
-  .food-card img {
-    height: 200px;
-  }
-
   .food-price {
     font-size: 16px;
     padding: 8px 12px;
@@ -676,22 +666,12 @@ body {
 }
 
 @media (max-width: 480px) {
-  .food-card img {
-    height: 150px;
-  }
-
   .food-price {
     font-size: 14px;
     padding: 6px 10px;
   }
 }
 
-/* Swiper Custom Styling */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #004d40 !important;
-  /* Arrow color */
-}
 
 /* General Styling */
 .feedback-form-container {
