@@ -8,9 +8,7 @@ const Footer = () => {
                 <h5>© 2025 All Rights Reserved</h5>
                 <div className="Socials">
                     <h3>Follow us on</h3>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
+                    <a href="https://www.instagram.com/bistro.and.brew?igsh=MWRvdGM5bndpdmJhbw==">Instagram</a>
                 </div>
             </div>
 

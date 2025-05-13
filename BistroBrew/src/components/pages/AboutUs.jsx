@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import about1 from '../../assets/static/about1.jpg';
+import cafe from '../../assets/static/about-1.jpg';
 import image from '../../assets/static/image.png';
 
 const AboutUs = () => {
@@ -38,7 +39,7 @@ const AboutUs = () => {
             {/* First Section: Image on Left, Text on Right */}
             <div className="section" ref={(el) => (sectionsRef.current[0] = el)}>
                 <div className="image-container left">
-                    <img src={about1} alt="About Us 1" />
+                    <img src={cafe} alt="About Us 1" />
                 </div>
                 <div className="text-container">
                     <h2>About us</h2>
@@ -71,27 +72,6 @@ const AboutUs = () => {
                 </div>
             </div>
 
-            {/* Third Section: Founders - The Dynamic Trio */}
-            <div className="section" ref={(el) => (sectionsRef.current[2] = el)}>
-                <div className="text-container">
-                    <h2>The Dynamic Trio</h2>
-                    <div className="founders">
-                        <div className="founder">
-                            <h3>Sahil More – The Face</h3>
-                            <p>Expertise in customer-facing, building relationships with customers.</p>
-                        </div>
-                        <div className="founder">
-                            <h3>Vinay Vyas – The Ops Guy</h3>
-                            <p>Taking care of management and improving efficiency.</p>
-                        </div>
-                        <div className="founder">
-                            <h3>Jitesh More – Dr. Chef</h3>
-                            <p>Google Ratings – 4.9 (261 reviews)</p>
-                            <p>Zomato Ratings – Dining: 4.4 (124 reviews), Delivery: 4.0 (245 reviews)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };

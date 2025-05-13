@@ -5,6 +5,7 @@ import coffeeMenu from "../../assets/static/coffee.jpg";
 import drinkMenu from "../../assets/static/drinks.jpg";
 import friesMenu from "../../assets/static/fries.jpg";
 import burgerMenu from "../../assets/static/burger.jpg";
+import menuTop from "../../assets/static/menu-top.jpg"; // Import the new image
 
 const MenuPage = () => {
     const [currentMenu, setCurrentMenu] = useState(coffeeMenu);
@@ -19,6 +20,11 @@ const MenuPage = () => {
 
     return (
         <div className="menu-page">
+            {/* Add the new image at the top */}
+            <div className="menu-top-image">
+                <img src={menuTop} alt="Menu Top" className="menu-top-img" />
+            </div>
+
             <h2 className="menu-heading">Delight your taste buds—check out our irresistible menu!</h2>
 
             <div className="menu-nav">
