@@ -9,9 +9,9 @@ function Navbar() {
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-                <li>
+                {/*<li>
                     <Link to="/menu">Menu</Link>
-                </li>
+    </li>*/}
 
                 <li>
                     <Link to="/aboutus">About Us</Link>
