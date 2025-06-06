@@ -442,52 +442,58 @@ body {
 }
 
 /* General Styles */
-
-.about {
-  background-color: #F5E9D7;
-  /* Warm, cozy background color */
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  line-height: 1.6;
-  padding-top: 180px;
-  /* Adjust based on fixed image height */
-}
-
-/* Fixed Image at the Top */
-.fixedImg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+/* About Us Page Container */
+.about-us {
   width: 100%;
   max-width: 1200px;
-  /* or your container width */
-  height: 120px;
-  /* or any smaller size you want */
-  object-fit: cover;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Section Styling */
+.header-image-wrapper {
+  width: 100%;
+  overflow: visible;
+  margin-bottom: 40px;
+}
+
+.header-image {
+  width: 100%;
+  /* full width always */
+  height: auto;
+  /* keep aspect ratio */
+  display: block;
+  object-fit: cover;
+  /* cover the container nicely */
+  border-radius: 8px;
+  max-width: 100%;
+  /* prevent overflow */
+}
+
+/* No special smaller height on mobile - let it scale naturally */
+@media (max-width: 600px) {
+  .header-image {
+    /* Just ensure it fits the screen nicely */
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+/* Sections */
 .section {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  padding: 80px 20px;
-  /* Increased padding for better spacing */
+  margin-bottom: 60px;
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
   background-color: #fff;
-  /* White background for sections */
-  margin: 20px auto;
-  max-width: 1200px;
   border-radius: 10px;
-  /* Rounded corners for sections */
+  padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for depth */
 }
 
 .section.visible {
@@ -495,48 +501,41 @@ body {
   transform: translateY(0);
 }
 
-/* Image Container */
-.image-container img {
-  width: 100%;
-  max-width: 500px;
-  /* Limit image size */
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Shadow for images */
-}
-
-/* Adjust specific sizes if needed */
-.image-container.left img,
-.image-container.right img {
-  max-width: 500px;
-  /* Ensure both images are the same width */
-  height: 450px;
-  /* Make both images have the same height */
-  object-fit: cover;
-  /* Ensures images cover the area proportionally */
-}
-
-/* Text Container */
+/* Text and Image containers */
 .text-container {
-  max-width: 50%;
+  flex: 1;
+  min-width: 300px;
   padding: 20px;
 }
 
 .text-container h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
-  color: #2c3e50;
-  /* Darker color for headings */
+  color: #1A6267;
 }
 
 .text-container p {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #555;
-  /* Slightly lighter color for text */
 }
 
-/* Left and Right Alignment */
+.image-container {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section layout variations */
 .left {
   order: 1;
 }
@@ -545,40 +544,58 @@ body {
   order: 2;
 }
 
-/* Responsive Design */
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .header-image {
+    max-height: 250px;
+  }
+}
+
 @media (max-width: 768px) {
-  .about {
-    padding-top: 200px;
-    /* Adjust padding for smaller screens */
+  .header-image-wrapper {
+    margin-bottom: 30px;
   }
 
-  .fixedImg {
-    height: 200px;
-    /* Further reduce height for mobile */
+  .header-image {
+    max-height: 200px;
   }
 
   .section {
     flex-direction: column;
-    padding: 40px 20px;
-    /* Reduced padding for smaller screens */
-  }
-
-  .image-container img {
-    max-width: 100%;
-    /* Full width for images on mobile */
-  }
-
-  .text-container {
-    max-width: 100%;
-    /* Full width for text on mobile */
-    padding: 20px 0;
-    /* Adjusted padding */
+    padding: 20px;
   }
 
   .left,
   .right {
     order: 0;
-    /* Reset order for mobile */
+  }
+
+  .text-container,
+  .image-container {
+    min-width: 100%;
+    padding: 15px 0;
+  }
+
+  .text-container h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-image {
+    max-height: 160px;
+  }
+
+  .about-us {
+    padding: 10px;
+  }
+
+  .text-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
   }
 }
 

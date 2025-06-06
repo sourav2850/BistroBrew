@@ -15,7 +15,7 @@ const AboutUs = () => {
                     }
                 });
             },
-            { threshold: 0.1 } // Trigger when 10% of the section is visible
+            { threshold: 0.1 }
         );
 
         sectionsRef.current.forEach((section) => {
@@ -31,37 +31,38 @@ const AboutUs = () => {
 
     return (
         <div className="about-us">
-            {/* Fixed Image at the Top with lazy loading */}
-            <div className="fixed-image">
-                <img src={image} alt="Fixed Banner" loading="lazy" />
+            {/* Header Image - Non-sticky, properly sized */}
+            <div className="header-image-wrapper">
+                <img
+                    src={image}
+                    alt="Bistro & Brew Header"
+                    className="header-image"
+                    loading="eager"
+                />
             </div>
 
-            {/* First Section: Image on Left, Text on Right */}
+            {/* First Section */}
             <div className="section" ref={(el) => (sectionsRef.current[0] = el)}>
                 <div className="image-container left">
                     <img
                         src={cafe}
-                        alt="About Us 1"
-                        loading="lazy"  // Lazy load the image
-                        decoding="async" // Async decoding for better performance
+                        alt="Our Cafe"
+                        loading="lazy"
+                        decoding="async"
                     />
                 </div>
                 <div className="text-container">
                     <h2>About us</h2>
                     <p>
                         Bistro & Brew started in April 2023 with passion and commitment, serving people
-                        with heartful meals and brews.
-                        We are mainly focused on quality and understanding the true blend of spices.
-                        In the last 19 months, we have understood that the secret of happiness is only through
-                        comfort food. For us simplicity is important, which is reflected in our minimalistic
-                        and cozy interiors, where people feel homely.
-                        Customers are our top priority, which helps us in building a community, where people
-                        feel connected and rooted.
+                        with heartful meals and brews. We are mainly focused on quality and understanding
+                        the true blend of spices. In the last 19 months, we have understood that the secret
+                        of happiness is only through comfort food.
                     </p>
                 </div>
             </div>
 
-            {/* Second Section: Image on Right, Text on Left */}
+            {/* Second Section */}
             <div className="section" ref={(el) => (sectionsRef.current[1] = el)}>
                 <div className="text-container">
                     <h2>Vision</h2>
@@ -69,21 +70,19 @@ const AboutUs = () => {
                         We believe in sticking to our roots and simple things.
                         We wanted to create a place where quality is never compromised.
                         We have the vision to create a brand name that people can trust.
-                        We aim to serve people with the first step in our home city and then across India.
                     </p>
                 </div>
                 <div className="image-container right">
                     <img
                         src={about1}
-                        alt="About Us 2"
-                        loading="lazy"  // Lazy load the image
-                        decoding="async" // Async decoding for better performance
+                        alt="Our Vision"
+                        loading="lazy"
+                        decoding="async"
                     />
                 </div>
             </div>
-
         </div>
     );
 };
 
-export default React.memo(AboutUs); // Prevent unnecessary re-renders
+export default React.memo(AboutUs);
